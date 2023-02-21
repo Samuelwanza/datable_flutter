@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:message_app/main.dart';
 
 class datatable_implementation extends StatelessWidget {
   const datatable_implementation({super.key});
@@ -8,8 +9,14 @@ class datatable_implementation extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("Computer Faculty")),
       body: const Data_Table(),
-      floatingActionButton:
-          FloatingActionButton(onPressed: () {}, child: Text("Next")),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => MyHomePage()));
+        },
+        child: Text("Back"),
+      ),
     );
   }
 }
